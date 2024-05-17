@@ -1,0 +1,136 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>aaa.utils</groupId>
+    <artifactId>PrintUtils</artifactId>
+    <packaging>jar</packaging>
+    <version>2.0.0</version>
+
+    <name>PrintUtils</name>
+    <url>https://github.com/Akkuzin/PrintUtils</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <lombok.version>1.18.32</lombok.version>
+        <commons-lang.version>3.14.0</commons-lang.version>
+        <commons-compress.version>1.26.2</commons-compress.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <apache-poi.version>5.2.5</apache-poi.version>
+        <pdfbox.version>3.0.2</pdfbox.version>
+        <dynamicreports.version>6.20.1.1.aaa</dynamicreports.version>
+        <jakarta-xml-bind.version>4.0.2</jakarta-xml-bind.version>
+        <jasperreports.version>6.21.3</jasperreports.version>
+        <jpa-persistance.version>3.1.0</jpa-persistance.version>
+
+        <aaa-utils.version>2.0.0</aaa-utils.version>
+
+        <junit.version>5.10.2</junit.version>
+        <assertj.version>3.26.0</assertj.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>project.local</id>
+            <name>Local Project Repo</name>
+            <url>file://${project.basedir}/repo</url>
+            <releases>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <!--@formatter:off -->
+
+    <dependencies>
+        <dependency><groupId>org.projectlombok</groupId><artifactId>lombok</artifactId><version>${lombok.version}</version></dependency>
+        <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><version>${junit.version}</version><scope>test</scope></dependency>
+        <dependency><groupId>org.assertj</groupId><artifactId>assertj-core</artifactId><version>${assertj.version}</version><scope>test</scope></dependency>
+        <dependency><groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>${commons-lang.version}</version></dependency>
+        <dependency><groupId>org.apache.commons</groupId><artifactId>commons-compress</artifactId><version>${commons-compress.version}</version></dependency>
+        <dependency><groupId>org.apache.commons</groupId><artifactId>commons-collections4</artifactId><version>${commons-collections4.version}</version></dependency>
+        <dependency><groupId>org.apache.poi</groupId><artifactId>poi</artifactId><version>${apache-poi.version}</version></dependency>
+        <dependency><groupId>org.apache.poi</groupId><artifactId>poi-ooxml</artifactId><version>${apache-poi.version}</version></dependency>
+        <dependency><groupId>org.apache.pdfbox</groupId><artifactId>pdfbox</artifactId><version>${pdfbox.version}</version></dependency>
+        <dependency>
+            <groupId>net.sourceforge.dynamicreports</groupId><artifactId>dynamicreports-core</artifactId><version>${dynamicreports.version}</version>
+            <exclusions>
+                <exclusion><groupId>javax.servlet</groupId><artifactId>servlet-api</artifactId></exclusion>
+                <exclusion><groupId>com.sun.xml.bind</groupId><artifactId>jaxb-core</artifactId></exclusion>
+                <exclusion><groupId>com.sun.xml.bind</groupId><artifactId>jaxb-impl</artifactId></exclusion>
+                <exclusion><groupId>javax.xml.bind</groupId><artifactId>jaxb-api</artifactId></exclusion>
+                <exclusion><groupId>org.glassfish.jaxb</groupId><artifactId>jaxb-core</artifactId></exclusion>
+                <exclusion><groupId>net.sf.barcode4j</groupId><artifactId>barcode4j</artifactId></exclusion>
+            </exclusions>
+        </dependency>
+        <dependency><groupId>net.sf.jasperreports</groupId><artifactId>jasperreports</artifactId><version>${jasperreports.version}</version></dependency>
+        <dependency><groupId>net.sf.jasperreports</groupId><artifactId>jasperreports-fonts</artifactId><version>${jasperreports.version}</version></dependency>
+        <dependency><groupId>jakarta.persistence</groupId><artifactId>jakarta.persistence-api</artifactId><version>${jpa-persistance.version}</version><scope>provided</scope></dependency>
+        <dependency><groupId>jakarta.xml.bind</groupId><artifactId>jakarta.xml.bind-api</artifactId><version>${jakarta-xml-bind.version}</version></dependency>
+        <dependency><groupId>org.glassfish.jaxb</groupId><artifactId>jaxb-runtime</artifactId><version>4.0.5</version><scope>test</scope></dependency>
+        <dependency><groupId>aaa.utils</groupId><artifactId>Utils</artifactId><version>${aaa-utils.version}</version></dependency>
+    </dependencies>
+
+    <!--@formatter:on -->
+
+    <build>
+        <finalName>SpringUtils</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3.8.4</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.16.2</version>
+                <configuration>
+                    <rulesUri>file:///${project.basedir}/dependency-rules.xml</rulesUri>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>checkUpdates</id>
+                        <goals>
+                            <goal>display-dependency-updates</goal>
+                            <goal>display-plugin-updates</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
