@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DynamicReports>
+    <font fontName="DejaVu Sans" fontSize="9"/>
+
+    <!-- DEFAULT DATA TYPES -->
+    <bigDecimalType pattern="#,##0.00#" horizontalAlignment="RIGHT"/>
+    <bigIntegerType pattern="#,##0" horizontalAlignment="RIGHT"/>
+    <byteType pattern="#,##0" horizontalAlignment="RIGHT"/>
+    <doubleType pattern="#,##0.#" horizontalAlignment="RIGHT"/>
+    <floatType pattern="#,##0.#" horizontalAlignment="RIGHT"/>
+    <integerType pattern="#,##0" horizontalAlignment="RIGHT"/>
+    <longType pattern="#,##0" horizontalAlignment="RIGHT"/>
+    <shortType pattern="#,##0" horizontalAlignment="RIGHT"/>
+    <dateType pattern="dd.MM.yyyy" horizontalAlignment="CENTER"/>
+    <dateYearToMonthType pattern="MM.yyyy" horizontalAlignment="CENTER"/>
+    <dateYearToHourType pattern="dd.MM.yyyy HH" horizontalAlignment="CENTER"/>
+    <dateYearToMinuteType pattern="dd.MM.yyyy HH:mm" horizontalAlignment="CENTER"/>
+    <dateYearToSecondType pattern="dd.MM.yyyy HH:mm:ss" horizontalAlignment="CENTER"/>
+    <dateYearToFractionType pattern="dd.MM.yyyy HH:mm:ss,SSS" horizontalAlignment="CENTER"/>
+    <dateYearType pattern="yyyy" horizontalAlignment="CENTER"/>
+    <dateMonthType pattern="MMMM" horizontalAlignment="CENTER"/>
+    <dateDayType pattern="dd" horizontalAlignment="CENTER"/>
+    <timeHourToMinuteType pattern="HH:mm" horizontalAlignment="CENTER"/>
+    <timeHourToSecondType pattern="HH:mm:ss" horizontalAlignment="CENTER"/>
+    <timeHourToFractionType pattern="HH:mm:ss,SSS" horizontalAlignment="CENTER"/>
+    <percentageType pattern="#,##0.00%" horizontalAlignment="RIGHT"/>
+    <booleanType horizontalAlignment="CENTER"/>
+    <characterType horizontalAlignment="LEFT"/>
+    <stringType horizontalAlignment="LEFT"/>
+    
+    <loadSystemFonts>true</loadSystemFonts>
+</DynamicReports>
