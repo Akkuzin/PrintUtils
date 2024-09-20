@@ -4,7 +4,7 @@
     <groupId>aaa.utils</groupId>
     <artifactId>PrintUtils</artifactId>
     <packaging>jar</packaging>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
 
     <name>PrintUtils</name>
     <url>https://github.com/Akkuzin/PrintUtils</url>
@@ -17,22 +17,22 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <lombok.version>1.18.32</lombok.version>
-        <commons-lang.version>3.14.0</commons-lang.version>
-        <commons-compress.version>1.26.2</commons-compress.version>
+        <lombok.version>1.18.34</lombok.version>
+        <commons-lang.version>3.17.0</commons-lang.version>
+        <commons-compress.version>1.27.1</commons-compress.version>
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <commons-collections4.version>4.4</commons-collections4.version>
-        <apache-poi.version>5.2.5</apache-poi.version>
-        <pdfbox.version>3.0.2</pdfbox.version>
+        <apache-poi.version>5.3.0</apache-poi.version>
+        <pdfbox.version>3.0.3</pdfbox.version>
         <dynamicreports.version>6.20.1.1.aaa</dynamicreports.version>
         <jakarta-xml-bind.version>4.0.2</jakarta-xml-bind.version>
         <jasperreports.version>6.21.3</jasperreports.version>
         <jpa-persistance.version>3.1.0</jpa-persistance.version>
 
-        <aaa-utils.version>2.0.0</aaa-utils.version>
+        <aaa-utils.version>2.0.1</aaa-utils.version>
 
-        <junit.version>5.10.2</junit.version>
-        <assertj.version>3.26.0</assertj.version>
+        <junit.version>5.11.0</junit.version>
+        <assertj.version>3.26.3</assertj.version>
     </properties>
 
     <repositories>
@@ -117,7 +117,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>2.16.2</version>
+                <version>2.17.1</version>
                 <configuration>
                     <rulesUri>file:///${project.basedir}/dependency-rules.xml</rulesUri>
                 </configuration>
